@@ -43,7 +43,7 @@ class TemperatureInput extends React.Component {
   }
 
   handleChange(e) {
-    this.props.onTemperatureChange(e.target.value);
+    this.props.onChange(e.target.value);
   }
 
   render () {
@@ -98,8 +98,8 @@ class TempCalculator extends React.Component {
     const farenheit = scale === 'c' ? tryConvert(temperature, toFarenheit) : temperature;
     return (
       <div>
-        <TemperatureInput scale="c" temperature={celcius} onTemperatureChange={this.handleCelciusChange} />
-        <TemperatureInput scale="f" temperature={farenheit} onTemperatureChange={this.handleFarenheitChange} />
+        <TemperatureInput scale="c" temperature={celcius} onChange={this.handleCelciusChange} />
+        <TemperatureInput scale="f" temperature={farenheit} onChange={this.handleFarenheitChange} />
         <BoilingVerdict celcius={parseFloat(celcius)} />
       </div>
     );
